@@ -7,22 +7,32 @@ import data from './data/rickandmorty/rickandmorty.js';
 let listaPersonajes = data.results;
 //console.log(listaPersonajes);
 for(let i = 0; i <listaPersonajes.length; i++){
-   // Hacer un contenedor que tenga la imagen y el nombre
+   // Creamos la tarjeta que contiene el nombre y la imagen 
     let contenedor = document.createElement("div");
-    contenedor.className = "grid-contenedor";
+    contenedor.className = "tarjeta";
    // Nombre
-    let nombre = document.createTextNode(listaPersonajes[i].name);
-    nombre.className ="grid-nombres";
+    let nombre = document.createElement("h2");
+    nombre.textContent = listaPersonajes[i].name;
+    nombre.className = "nombres";
     contenedor.appendChild(nombre);
    // Imagen
     let Img = document.createElement("img");
     Img.src = listaPersonajes[i].image;
-    Img.className = "grid-imagenes";
+    Img.className = "imagenes";
     contenedor.appendChild(Img);
    // Mostrar en pantalla 
     document.getElementById("contenedor1").appendChild(contenedor)
 
-}
+};
+
+
+
+/*
+- innerHTML concatenando strings 
+ document.getElementById("contenedor1").innerHTML += '<div class="tarjeta">' + listaPersonajes[i].name + '<img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg" class="grid-imagenes"></div>';
+- innerHTML con template literals 
+ document.getElementById("contenedor1").innerHTML += `<div class="tarjeta"> ${ listaPersonajes[i].name }<img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg" class="grid-imagenes"></div>`;
+*/
 
 
 
