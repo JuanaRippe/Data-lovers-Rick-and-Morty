@@ -4,30 +4,30 @@ import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
 //Guardar data en una variable para poder jugar con ella
-let listaPersonajes = data.results;
+ let listaPersonajes = data.results;
 //console.log(listaPersonajes);
 for(let i = 0; i <listaPersonajes.length; i++){
    // Creamos la tarjeta que contiene el nombre y la imagen 
     let contenedor = document.createElement("div");
     contenedor.className = "tarjeta";
-   // Nombre
-    let nombre = document.createElement("h2");
-    nombre.textContent = listaPersonajes[i].name;
-    nombre.className = "nombres";
-    contenedor.appendChild(nombre);
    // Imagen
     let Img = document.createElement("img");
     Img.src = listaPersonajes[i].image;
     Img.className = "imagenes";
     contenedor.appendChild(Img);
+    // Nombre
+    let nombre = document.createElement("h2");
+    nombre.textContent = listaPersonajes[i].name;
+    nombre.className = "nombres";
+    contenedor.appendChild(nombre);
    // Mostrar en pantalla 
-    document.getElementById("contenedor1").appendChild(contenedor)
+    document.getElementById("contenedorTerjetas").appendChild(contenedor)
 
 };
 
 
 
-/*
+/* CONCEPTO =>
 - innerHTML concatenando strings 
  document.getElementById("contenedor1").innerHTML += '<div class="tarjeta">' + listaPersonajes[i].name + '<img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg" class="grid-imagenes"></div>';
 - innerHTML con template literals 
@@ -35,7 +35,7 @@ for(let i = 0; i <listaPersonajes.length; i++){
 */
 
 
-
+// PRUEBA =>
 /*for(let i = 0; i <listaPersonajes.length; i++){
 const contenedor = document.createElement("div");
 let nombrePersonajes = document.createElement("p");
@@ -45,7 +45,7 @@ nombrePersonajes.innerHTML = listaPersonajes[i].name;
 };*/
 
 
-
+// PRUEBA =>
 /*function mostrarPersonajes (data) {
  let personajes = document.getElementById("contenedor1");
  personajes.innerHTML = ("");
@@ -60,6 +60,7 @@ for(let i = 0; i <listaPersonajes.length; i++){
  //console.log(listaPersonajes[i].name + " " + listaPersonajes[i].status);
 };*/
 
+// PRUEBA=>
 //Accedo al primer personaje :)
 /*let contenedor = document.createElement("div")
 let nombre = document.createTextNode(listaPersonajes[0].name);
@@ -83,6 +84,7 @@ elementoImg.src = listaPersonajes[0].image;
 contenedor.appendChild(elementoImg);
 document.getElementById("contenedor1").appendChild(contenedor);*/
 
+// PRIMERA PRUEBA =>
 /*const primerPersonaje =  {
     "id": 1,
     "name": "Rick Sanchez",
