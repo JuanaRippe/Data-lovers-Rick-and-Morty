@@ -5,20 +5,55 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Knewave&display=swap" rel="stylesheet">
   </head>
 
   <body>
+
     <div class="primerContenedor">
+
     <header >
-      <div class="encabezado"> RICK AND MORTY </div>
+      <img src="../src/Img/tituloCorto.png" width="30%">
     </header>
+
     <main>
+
+    <form class="formulario">
+      <select class="filtrarEspecies" id="filtrarEspecies">
+        <option value="0">SPECIE</option>
+        <option value="1">Human</option>
+        <option value="2">Alien</option>
+        <option value="3">Humanoid</option>
+        <option value="4">unknown</option>
+        <option value="5">Poopybutthole</option>
+        <option value="6">Mytholog</option>
+        <option value="7">Animal</option>
+        <option value="8">Vampire</option>
+        <option value="9">Robot</option>
+        <option value="10">Cronenberg</option>
+        <option value="11"> Disease</option>
+        <option value="12">Parasite</option>
+      </select>
+
+      <select class="filtrarGenero" id="filtrarGenero">
+        <option value="0">GENER</option>
+        <option value="1">Female</option>
+        <option value="2">Male</option>
+        <option value="3">unknown</option>
+        <option value="4">Genderless</option>
+      </select>
+    </form>
+
     <div id="contenedorTerjetas" class="contenedorTarjetas"></div>
     </main>
-    <footer class="piePagina">
-      <div class="piePagina"> </div>
+
+    <footer >
+      <div class="piePagina"></div>
     </footer>
+
   </div>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
