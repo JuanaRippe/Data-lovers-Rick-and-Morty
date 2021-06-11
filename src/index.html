@@ -17,35 +17,47 @@
       <img src="../src/Img/tituloCorto.png" width="30%">
     </header>
 
-    <main>
-
-    <form class="formulario">
-      <select class="filtrarEspecies" id="filtrarEspecies">
-        <option value="0">SPECIE</option>
-        <option value="1">Human</option>
-        <option value="2">Alien</option>
-        <option value="3">Humanoid</option>
-        <option value="4">unknown</option>
-        <option value="5">Poopybutthole</option>
-        <option value="6">Mytholog</option>
-        <option value="7">Animal</option>
-        <option value="8">Vampire</option>
-        <option value="9">Robot</option>
-        <option value="10">Cronenberg</option>
-        <option value="11"> Disease</option>
-        <option value="12">Parasite</option>
+    <main id="contenido">
+   <div class="contenedorBotones">
+    <form class="formulario" >
+      <p class="tituloFiltro">FILTRAR POR</p>
+      <select class="selectF" id="filtrarEspecies">
+        <option value="SPECIE">SPECIE</option>
+        <option value="Human">Human</option>
+        <option value="Alien">Alien</option>
+        <option value="Humanoid">Humanoid</option>
+        <option value="unknown">unknown</option>
+        <option value="Poopybutthole">Poopybutthole</option>
+        <option value="Mytholog">Mytholog</option>
+        <option value="Animal">Animal</option>
+        <option value="Vampire">Vampire</option>
+        <option value="Robot">Robot</option>
+        <option value="Cronenberg">Cronenberg</option>
+        <option value="Disease"> Disease </option>
+        <option value="Parasite">Parasite</option>
       </select>
 
-      <select class="filtrarGenero" id="filtrarGenero">
-        <option value="0">GENER</option>
-        <option value="1">Female</option>
-        <option value="2">Male</option>
-        <option value="3">unknown</option>
-        <option value="4">Genderless</option>
+      <select class="selectF" id="filtrarGenero">
+        <option value="GENDER">GENDER</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value=">Unknown">Unknown</option>
+        <option value="Genderless">Genderless</option>
       </select>
     </form>
+    <div class="botones">
+      <p class="tituloOrdenar">ORDENAR POR</p>
+      <button class="ordenar">A - Z </button>
+      <button class="ordenar">Z - A</button>
+    </div>
+  </div>
+     
+  
 
-    <div id="contenedorTerjetas" class="contenedorTarjetas"></div>
+     
+
+    <div id="contenedorTarjetas" class="contenedorTarjetas"></div>
+    
     </main>
 
     <footer >
