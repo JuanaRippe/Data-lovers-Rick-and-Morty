@@ -27,15 +27,15 @@ import data from './data/rickandmorty/rickandmorty.js';
 
     let parrafo = document.createElement("p");
     parrafo.textContent = arreglo[i].status;
-    contenedor.appendChild(parrafo);
     parrafo.className = "estado";
-    
+    contenedor.appendChild(parrafo);
    // Apadrinar las tarjetas al contenedor 
     document.getElementById("contenedorTarjetas").appendChild(contenedor)
   }
   
  }
  personajes(listaPersonajes) 
+ 
  
 
 /* FILTRADO */ 

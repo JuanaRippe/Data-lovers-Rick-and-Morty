@@ -135,7 +135,10 @@ body:before{
     font-weight: bold;
 }
 .estado {
-
+    color: #133c41c4;
+    width: 100%;
+    font-size: 20px;
+    font-family:'Knewave', cursive;
 }
 
 
