@@ -1,14 +1,15 @@
-import { filtrarEspecie, filtrarGenero } from './data.js';
-
+import { filtrarEspecie, filtrarGenero, ordenar } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
 //Guardar data en una variable para poder jugar con ella
  const listaPersonajes = data.results;
+ let personajesFiltrados = listaPersonajes;
  //console.log(listaPersonajes);
 
  function personajes (arreglo) {
   for(let i = 0; i <arreglo.length; i++){
+     // console.log(arreglo[i]);
    // Creamos la tarjeta que contiene el nombre y la imagen 
     let contenedor = document.createElement("div");
     contenedor.className = "tarjeta";
@@ -25,15 +26,17 @@ import data from './data/rickandmorty/rickandmorty.js';
     contenedor.appendChild(nombre);
 
     let parrafo = document.createElement("p");
-    parrafo.textContent = arreglo[i].species;
+    parrafo.textContent = arreglo[i].status;
     contenedor.appendChild(parrafo);
-
-
+    parrafo.className = "estado";
+    
    // Apadrinar las tarjetas al contenedor 
     document.getElementById("contenedorTarjetas").appendChild(contenedor)
   }
+  
  }
- personajes(listaPersonajes);
+ personajes(listaPersonajes) 
+ 
 
 /* FILTRADO */ 
 //Especie
@@ -42,18 +45,16 @@ import data from './data/rickandmorty/rickandmorty.js';
 
  function filtrarE() {
      const selectEspecie = document.getElementById("filtrarEspecies").value;
-
-     let resultado = filtrarEspecie(listaPersonajes, selectEspecie);
+     personajesFiltrados = filtrarEspecie(listaPersonajes, selectEspecie);
      //console.log(resultado);
-     
-    let elementoPadre = document.getElementById("contenedorTarjetas");
-    elementoPadre.innerHTML = "";
+     let elementoPadre = document.getElementById("contenedorTarjetas");
+     elementoPadre.innerHTML = "";
     /*let removerPersonajes = elementoPadre.children
     //console.log(removerPersonajes);
      for(let i = 0; i <removerPersonajes.length; i++){
         elementoPadre.removeChild(removerPersonajes[i])
      }*/
-     personajes(resultado)
+     personajes(personajesFiltrados)
  } 
 
 //Genero
@@ -61,14 +62,42 @@ const selectGenero = document.getElementById("filtrarGenero");
 selectGenero.addEventListener("change", filtrarG);
 
 function filtrarG() {
-    const selectGeneros = document.getElementById("filtrarGenero").value;
-
-    let resultado = filtrarGenero(listaPersonajes, selectGeneros)
+    let selectGeneros = document.getElementById("filtrarGenero").value;
+    let personajesFiltradosGenero = filtrarGenero(personajesFiltrados, selectGeneros)
+    let elementoPadre = document.getElementById("contenedorTarjetas");
+     elementoPadre.innerHTML = "";
+    personajes(personajesFiltradosGenero)
     
-    personajes(resultado)
 } 
+ const botonAZ = document.getElementById("ordenarAZ");
+ botonAZ.addEventListener("click", ordenarA );
+ const botonZA = document.getElementById("ordenarZA");
+ botonZA.addEventListener("click", ordenarA );
+ 
+ function ordenarA(e){
+    let  ordenarPor = "name";
+    let valorBoton = e.target.value;
+    let resultado = ordenar(personajesFiltrados, ordenarPor, valorBoton)
+    let elementoPadre = document.getElementById("contenedorTarjetas");
+    elementoPadre.innerHTML = "";
+    personajes(resultado);
+   // console.log(valorBoton);
+}
 
 
+
+
+ /*function ordenarZ(){
+    //console.log("se ejecuto ordenar");
+    let  boton = "name";
+    let valorOrder = "descendente";
+    //console.log(boton);
+    let resultado = ordenar(listaPersonajes, boton, valorOrder)
+
+    let elementoPadre = document.getElementById("contenedorTarjetas");
+    elementoPadre.innerHTML = "";
+    personajes(resultado)
+}*/
 
 
 

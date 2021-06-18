@@ -24,7 +24,7 @@ body{
 body:before{
     content: "";
     width: 100%;
-    min-height: 3730vh;
+    min-height: 4390vh;
     position: absolute;
     background: rgba(88, 97, 85, 0.685);
     z-index: -1;
@@ -133,6 +133,9 @@ body:before{
     font-size: 40px;
     font-family:'Amatic SC', cursive;
     font-weight: bold;
+}
+.estado {
+
 }
 
 
